@@ -1,1 +1,2 @@
 from .silhouette_method import clustering_evaluation as silhouette_method
+from .e2_hypothesis import clustering_evaluation as e2_hypothesis

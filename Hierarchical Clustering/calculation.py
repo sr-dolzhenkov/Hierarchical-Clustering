@@ -7,6 +7,7 @@ def calculate(data, count_distance):
     clusters_number = len(clusters)
     all_clusters = list(range(clusters_number))
     all_clusters[0] = clusters.copy()
+    min_distance_list = []
 
     distances = np.zeros((clusters_number, clusters_number))
 
@@ -25,6 +26,8 @@ def calculate(data, count_distance):
                     min_distance = distances[i, j]
                     i_num = i
                     j_num = j
+
+        min_distance_list.append(min_distance)
 
         return i_num, j_num
 
@@ -53,4 +56,4 @@ def calculate(data, count_distance):
         unite_clusters(*find_min_distance())
         all_clusters[-clusters_number] = clusters.copy()
 
-    return all_clusters
+    return all_clusters, min_distance_list

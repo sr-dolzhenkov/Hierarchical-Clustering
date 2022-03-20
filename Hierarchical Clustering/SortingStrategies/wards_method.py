@@ -12,7 +12,7 @@ def count_distance(cluster_1, cluster_2):
 
     for point in united_cluster:
         x, y = point
-        united_cluster_distance += ((x - centroid_united_cluster_x) ** 2 + (y - centroid_united_cluster_y) ** 2) ** (1 / 2)
+        united_cluster_distance += (x - centroid_united_cluster_x) ** 2 + (y - centroid_united_cluster_y) ** 2
 
     # cluster_1
     centroid_cluster_1_x = cluster_1[:, 0].sum() / len(cluster_1)
@@ -22,7 +22,7 @@ def count_distance(cluster_1, cluster_2):
 
     for point in cluster_1:
         x, y = point
-        cluster_1_distance += ((x - centroid_cluster_1_x) ** 2 + (y - centroid_cluster_1_y) ** 2) ** (1 / 2)
+        cluster_1_distance += (x - centroid_cluster_1_x) ** 2 + (y - centroid_cluster_1_y) ** 2
 
     # cluster_2
     centroid_cluster_2_x = cluster_2[:, 0].sum() / len(cluster_2)
@@ -32,7 +32,7 @@ def count_distance(cluster_1, cluster_2):
 
     for point in cluster_2:
         x, y = point
-        cluster_2_distance += ((x - centroid_cluster_2_x) ** 2 + (y - centroid_cluster_2_y) ** 2) ** (1 / 2)
+        cluster_2_distance += (x - centroid_cluster_2_x) ** 2 + (y - centroid_cluster_2_y) ** 2
 
     distance = united_cluster_distance - cluster_1_distance - cluster_2_distance
 
