@@ -17,7 +17,7 @@ from ClusteringEvaluationMethod import silhouette_method, \
 
 from Metrics import v_measure
 
-from Data.DataCreation import resave_data
+from Data import resave_data
 
 distance_calculation_method = {'SL': single_linkage,
                                'CL': complete_linkage,

@@ -1,20 +1,14 @@
 import numpy as np
-import pathlib
 
-from Data.DataCreation import save_data
-from Data.DataCreation import resave_data
+from Data import save_data
 
 from assembly import clustering
 from assembly import stages_of_stable_clustering
 from assembly import cluster_shift
 
-from sklearn.cluster import AgglomerativeClustering
-from sklearn import metrics
-
 if __name__ == '__main__':
     save_data()
-    data_path = pathlib.Path('Data/data.npy')
-    data = np.load(data_path)
+    data = np.load('Data/data.npy')
 
     # clustering(data, 'SL', 'SM')
     # clustering(data, 'CL', 'SM')
