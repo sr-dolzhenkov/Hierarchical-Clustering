@@ -1,4 +1,3 @@
-import pathlib
 import numpy as np
 
 clusters = [np.array([
@@ -112,63 +111,12 @@ clusters = [np.array([
 ])]
 
 
-# data = np.array([(1.1, 1),
-#                  (1, 2),
-#                  (2, 1),
-#                  (9.1, 1),
-#                  (9, 2),
-#                  (10, 1),
-#                  (1, 9.1),
-#                  (1, 10),
-#                  (2, 10),
-#                  (9, 9.1),
-#                  (9, 10),
-#                  (10, 9)])
-
-# data = np.array([(0, 0),
-#                  (4, 2),
-#                  (3, 3),
-#                  (2, 1),
-#                  (0, 3),
-#                  (1, 3),
-#                  (1, 1),
-#                  (18, 12),
-#                  (17, 13),
-#                  (15, 11),
-#                  (14, 13),
-#                  (16, 14),
-#                  (16, 11),
-#                  (15, 12),
-#                  (18, 13),
-#                  (5, 12),
-#                  (2, 13),
-#                  (4, 14),
-#                  (3, 12),
-#                  (1, 13),
-#                  (2, 14),
-#                  (19, 24),
-#                  (22, 22),
-#                  (24, 21),
-#                  (21, 23),
-#                  (20, 24),
-#                  (39, 22),
-#                  (38, 23),
-#                  (39, 24),
-#                  (37, 21),
-#                  (26, 2),
-#                  (6, 24),
-#                  (36, 10)
-#                  ])
-
-
-def save_data():
+def create_data():
     data = np.concatenate(clusters)
-    path = pathlib.Path('Data/data.npy')
-    np.save(path, data)
+    np.save('data_creation/data', data)
+    np.savetxt('data_creation/data.csv', data)
 
 
-def resave_data(cluster_number, step_x):
-    clusters[cluster_number][:, 0] += step_x
-    data = np.concatenate(clusters)
-    path = pathlib.Path('Data/data.npy')
-    np.save(path, data)
+if __name__ == '__main__':
+    create_data()
+    print('Data saved.')

@@ -2,7 +2,6 @@ import sys
 
 
 def clustering_evaluation(all_clusters, _):
-    # tested_clusters_number = 7
     tested_clusters_number = len(*all_clusters[-1]) - 1
 
     points_number = len(*all_clusters[-1])
