@@ -5,8 +5,6 @@ from hierarchical_clustering.sorting_strategies import single_linkage, complete_
 
 from hierarchical_clustering.clustering_evaluation_methods import silhouette_method, e2_hypothesis
 
-from hierarchical_clustering.metrics import v_measure
-
 distance_calculation_methods = {'SL': single_linkage,
                                 'CL': complete_linkage,
                                 'UPGMA': UPGMA,
@@ -15,8 +13,6 @@ distance_calculation_methods = {'SL': single_linkage,
 
 clustering_evaluation_methods = {'SM': silhouette_method,
                                  'E2H': e2_hypothesis}
-
-measure = {'VM': v_measure}
 
 
 def cluster(data, distance_calculation_method, clustering_evaluation_method):
